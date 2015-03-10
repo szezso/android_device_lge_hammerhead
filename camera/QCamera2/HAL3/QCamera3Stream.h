@@ -1,4 +1,4 @@
-/* Copyright (c) 2012-2013, The Linux Foundataion. All rights reserved.
+/* Copyright (c) 2012-2015, The Linux Foundataion. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -31,6 +31,7 @@
 #define __QCAMERA3_STREAM_H__
 
 #include <hardware/camera3.h>
+#include "utils/Mutex.h"
 #include "QCameraCmdThread.h"
 #include "QCamera3Mem.h"
 
@@ -64,6 +65,7 @@ public:
                          stream_cb_routine stream_cb,
                          void *userdata);
     virtual int32_t bufDone(int index);
+    virtual int32_t bufRelease(int32_t index);
     virtual int32_t processDataNotify(mm_camera_super_buf_t *bufs);
     virtual int32_t start();
     virtual int32_t stop();
@@ -107,6 +109,7 @@ private:
     cam_frame_len_offset_t mFrameLenOffset;
     cam_padding_info_t mPaddingInfo;
     QCamera3Channel *mChannel;
+    Mutex mLock;    //Lock controlling access to 'mBufDefs'
 
     static int32_t get_bufs(
                      cam_frame_len_offset_t *offset,
