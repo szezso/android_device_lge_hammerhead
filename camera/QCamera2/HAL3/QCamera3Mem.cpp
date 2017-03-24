@@ -654,6 +654,9 @@ int QCamera3GrallocMemory::registerBuffer(buffer_handle_t *buffer)
             MAP_SHARED,
             mMemInfo[mBufferCount].fd, 0);
     if (vaddr == MAP_FAILED) {
+        /* we have to close the main_ion_fd when mmap fails */
+        close(mMemInfo[mBufferCount].main_ion_fd);
+        mMemInfo[mBufferCount].main_ion_fd = -1;
         ret = NO_MEMORY;
     } else {
         mPtr[mBufferCount] = vaddr;
