@@ -25,6 +25,9 @@
 # FastCharge HAL
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.fastcharge@1\.0-service\.hh                   u:object_r:hal_lineage_fastcharge_default_exec:s0
 
+# Gatekeeper HAL
+/(vendor|system/vendor)/bin/hw/android\.hardware\.gatekeeper@1\.0-service\.software	u:object_r:hal_gatekeeper_default_exec:s0
+
 # Light HAL
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.hh    u:object_r:hal_light_default_exec:s0
 
