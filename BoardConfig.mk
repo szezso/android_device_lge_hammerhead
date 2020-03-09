@@ -14,6 +14,8 @@
 # limitations under the License.
 #
 
+BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
+
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH := arm
