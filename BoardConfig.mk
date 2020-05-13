@@ -14,6 +14,7 @@
 # limitations under the License.
 #
 
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
 
 TARGET_CPU_ABI := armeabi-v7a
