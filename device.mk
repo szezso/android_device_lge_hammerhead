@@ -408,6 +408,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.use_cc_names=true
 
 PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.radio.enableadvancedscan=false \
     persist.vendor.radio.rat_on=combine
 
 # If data_no_toggle is 1 then active and dormancy enable at all times.
