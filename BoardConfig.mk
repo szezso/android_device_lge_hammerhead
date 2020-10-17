@@ -162,4 +162,7 @@ TARGET_VNDK_USE_CORE_VARIANT := true
 TARGET_USES_INTERACTION_BOOST := true
 TARGET_USES_NON_LEGACY_POWERHAL := true
 
+# Legacy memfd
+TARGET_HAS_MEMFD_BACKPORT := true
+
 -include vendor/lge/hammerhead/BoardConfigVendor.mk
