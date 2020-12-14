@@ -2,6 +2,7 @@ genfscon proc /bluetooth/sleep/lpm     u:object_r:proc_bluetooth_writable:s0
 genfscon proc /bluetooth/sleep/btwrite u:object_r:proc_bluetooth_writable:s0
 
 # proc labels
+genfscon proc /last_kmsg                      u:object_r:proc_last_kmsg:s0
 genfscon proc /sys/vm/swappiness              u:object_r:proc_swap:s0
 
 # genfscon sysfs /devices/virtual/timed_output/vibrator/enable u:object_r:sysfs_vibrator:s0
