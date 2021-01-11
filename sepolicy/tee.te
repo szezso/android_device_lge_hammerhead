@@ -26,3 +26,6 @@ allow tee block_device:dir search;
 allow tee self:capability sys_rawio;
 allow tee rpmb_device:blk_file rw_file_perms;
 allow tee ssd_device:blk_file rw_file_perms;
+
+allow tee system_data_root_file:dir r_dir_perms;
+allow tee system_data_root_file:file r_file_perms;
