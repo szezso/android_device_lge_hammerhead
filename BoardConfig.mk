@@ -106,6 +106,7 @@ BOARD_ROOT_EXTRA_SYMLINKS += /vendor/etc:/vtc
 BOARD_ROOT_EXTRA_SYMLINKS += /data/tombstones:/tombstones
 
 # Define kernel config for inline building
+TARGET_KERNEL_ADDITIONAL_FLAGS := HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
 TARGET_KERNEL_CLANG_COMPILE := false
 TARGET_KERNEL_CONFIG := lineageos_hammerhead_defconfig
 TARGET_KERNEL_SOURCE := kernel/lge/hammerhead
