@@ -479,6 +479,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.charger.enable_suspend=true
 
+# IORap
+PRODUCT_PROPERTY_OVERRIDES += \
+    iorapd.readahead.enable=false \
+    iorapd.perfetto.enable=false \
+    ro.iorapd.enable=false
+
 # Device was launched with K
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_k.mk)
 
