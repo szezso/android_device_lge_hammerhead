@@ -479,6 +479,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.charger.enable_suspend=true
 
+# BPF
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.kernel.ebpf.supported=false
+
 # IORap
 PRODUCT_PROPERTY_OVERRIDES += \
     iorapd.readahead.enable=false \
