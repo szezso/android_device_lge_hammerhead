@@ -434,8 +434,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.always_send_plmn=true
 
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    rild.libpath=/vendor/lib/libril-qc-qmi-1.so
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.rild.libpath=/vendor/lib/libril-qc-qmi-1.so
 
 # Allow tethering without provisioning app
 PRODUCT_PROPERTY_OVERRIDES += \
