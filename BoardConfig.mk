@@ -34,18 +34,7 @@ BOARD_KERNEL_CMDLINE += loop.max_part=7
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02900000 --tags_offset 0x02700000
 BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 
-# Shader cache config options
-# Maximum size of the  GLES Shaders that can be cached for reuse.
-# Increase the size if shaders of size greater than 12KB are used.
-MAX_EGL_CACHE_KEY_SIZE := 12*1024
-
-# Maximum GLES shader cache size for each app to store the compiled shader
-# binaries. Decrease the size if RAM or Flash Storage size is a limitation
-# of the device.
-MAX_EGL_CACHE_SIZE := 2048*1024
-
 BOARD_USES_ALSA_AUDIO := true
-USE_XML_AUDIO_POLICY_CONF := 1
 
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
@@ -129,13 +118,10 @@ DEVICE_MATRIX_FILE := device/lge/hammerhead/compatibility_matrix.xml
 TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 TARGET_HAS_HH_VSYNC_ISSUE := true
 
-USE_DEVICE_SPECIFIC_QCOM_PROPRIETARY:= true
 TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
     /system/bin/cameraserver=22 \
     /system/bin/mediaserver=22 \
     /system/vendor/bin/mm-qcamera-daemon=22
-
-TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS:= true
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
