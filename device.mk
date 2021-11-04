@@ -65,9 +65,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
     $(LOCAL_PATH)/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/bcmdhd.cal:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bcmdhd.cal
-
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml \
@@ -469,7 +466,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_k.mk)
 $(call inherit-product-if-exists, $(LOCAL_PATH)/bluetooth/bcm.mk)
 
 # Broadcom WIFI driver
-$(call inherit-product-if-exists, $(LOCAL_PATH)/wlan/bcmdhd/firmware/bcm4339/device-bcm.mk)
+$(call inherit-product-if-exists, $(LOCAL_PATH)/wlan/bcm.mk)
 
 # Vendor security patch level
 PRODUCT_PROPERTY_OVERRIDES += \
