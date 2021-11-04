@@ -1,5 +1,5 @@
 #
-# Copyright 2013 The Android Open Source Project
+# Copyright (C) 2020-2021 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,13 +14,12 @@
 # limitations under the License.
 #
 
-LOCAL_PATH:= $(call my-dir)
+LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
-LOCAL_SRC_FILES := addrloader.c
+LOCAL_SRC_FILES := bluetooth_loader.c
 LOCAL_SHARED_LIBRARIES := libcutils liblog
 LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_OWNER := lge
-LOCAL_MODULE := bdAddrLoader
+LOCAL_MODULE := bluetooth_loader
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_EXECUTABLE)

@@ -272,7 +272,7 @@ PRODUCT_PACKAGES += \
     e2fsck
 
 PRODUCT_PACKAGES += \
-    bdAddrLoader
+    bluetooth_loader
 
 # Power
 PRODUCT_PACKAGES += \

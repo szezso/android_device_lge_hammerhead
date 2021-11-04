@@ -363,12 +363,6 @@ service qcamerasvr /vendor/bin/mm-qcamera-daemon
     user camera
     group camera system inet input graphics gps
 
-service bdAddrLoader /vendor/bin/bdAddrLoader -f /persist/bluetooth/.bdaddr -h -x
-    class main
-    user bluetooth
-    group system bluetooth
-    oneshot
-
 service mpdecision /vendor/bin/mpdecision --avg_comp
    class late_start
    user root
@@ -391,6 +385,16 @@ service vss_init /vendor/bin/vss_init
     user root
     group root
     disabled
+
+service vendor.bluetooth_loader /vendor/bin/bluetooth_loader
+    class main
+    user bluetooth
+    group system bluetooth
+    oneshot
+
+on property:init.svc.vendor.bluetooth_loader=stopped
+    chmod 0644 /data/misc/bluetooth/.bdaddr
+    chown bluetooth bluetooth /data/misc/bluetooth/.bdaddr
 
 on property:apexd.status=ready
     mount none /vendor/etc/swcodec/ld.config.txt /apex/com.android.media.swcodec/etc/ld.config.txt bind

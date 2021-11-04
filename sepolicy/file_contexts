@@ -87,7 +87,7 @@
 /data/vendor/mediadrm(/.*)?        u:object_r:mediadrm_vendor_data_file:s0
 
 # Bluetooth MAC loader
-/(system/vendor|vendor)/bin/bdAddrLoader           u:object_r:bluetooth_loader_exec:s0
+/(system/vendor|vendor)/bin/bluetooth_loader       u:object_r:bluetooth_loader_exec:s0
 
 # Vendor specific init
 /(system/vendor|vendor)/bin/vss_init               u:object_r:vss_exec:s0
