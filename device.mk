@@ -68,9 +68,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/bcmdhd.cal:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/bcmdhd.cal
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/bluetooth/BCM43xx.hcd:$(TARGET_COPY_OUT_VENDOR)/firmware/bcm4335c0.hcd
-
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml \
@@ -271,9 +268,6 @@ PRODUCT_PACKAGES += \
     resize2fs_static \
     e2fsck
 
-PRODUCT_PACKAGES += \
-    bluetooth_loader
-
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2-service.hh
@@ -316,17 +310,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libshim_atomic \
     libshim_ril
-
-# AptX
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/aptx/lib/libaptX_encoder.so:$(TARGET_COPY_OUT_VENDOR)/lib/libaptX_encoder.so \
-    $(LOCAL_PATH)/aptx/lib/libaptXHD_encoder.so:$(TARGET_COPY_OUT_VENDOR)/lib/libaptXHD_encoder.so
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.bt.enableAptXHD=true \
-    persist.service.btui.use_aptx=1 \
-    persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac \
-    persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac
 
 # Set sensor streaming rate
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -482,6 +465,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Device was launched with K
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_k.mk)
+
+# Broadcom BT driver
+$(call inherit-product-if-exists, $(LOCAL_PATH)/bluetooth/bcm.mk)
 
 # Broadcom WIFI driver
 $(call inherit-product-if-exists, $(LOCAL_PATH)/wlan/bcmdhd/firmware/bcm4339/device-bcm.mk)
