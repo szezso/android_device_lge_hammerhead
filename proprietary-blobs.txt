@@ -81,7 +81,7 @@ vendor/lib/libssd.so
 vendor/lib/libstagefright_hdcp.so
 vendor/lib/libxml.so
 vendor/bin/mpdecision|f2f62bee58d83a16f649ad63d0520de30bca0d7f
-vendor/bin/thermal-engine
+vendor/bin/thermal-engine|c8e0ebddaa0809276f190257fc7e08a60d0d2c91
 vendor/bin/vss_init
 vendor/etc/qcril.db
 vendor/firmware/a330_pfp.fw
