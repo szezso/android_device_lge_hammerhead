@@ -6,6 +6,7 @@ allow vendor_init unlabeled:dir { r_dir_perms relabelfrom };
 allow vendor_init unlabeled:file { r_file_perms relabelfrom };
 
 allow vendor_init radio_data_file:lnk_file create_file_perms;
+allow vendor_init radio_core_data_file:lnk_file create_file_perms;
 allow vendor_init vendor_configs_file:file mounton;
 
 allow vendor_init proc_last_kmsg:file { r_file_perms setattr };
