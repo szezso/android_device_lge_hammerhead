@@ -11,3 +11,5 @@ allow cameraserver cameraserver:fd use;
 # Allow writing to mpdecision
 unix_socket_send(cameraserver, mpctl, mpdecision)
 allow cameraserver mpctl_socket:dir search;
+
+get_prop(cameraserver, vendor_default_prop);
