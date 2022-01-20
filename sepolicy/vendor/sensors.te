@@ -6,3 +6,5 @@ allow sensors self:socket *;
 
 # Talk to qmuxd (qmux_radio)
 qmux_socket(sensors)
+
+get_prop(sensors, default_prop);

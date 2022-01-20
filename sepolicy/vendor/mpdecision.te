@@ -33,3 +33,5 @@ allow mpdecision sysfs_devices_system_cpu:file rw_file_perms;
 allow mpdecision sysfs_memory:file rw_file_perms;
 allow mpdecision sysfs_memory:dir rw_dir_perms;
 allow mpdecision system_file:file execmod;
+
+get_prop(mpdecision, default_prop);

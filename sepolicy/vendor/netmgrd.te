@@ -8,3 +8,5 @@ allow netmgrd vendor_file_type:file rx_file_perms;
 # Set net.rmnet0.* values
 set_prop(netmgrd, radio_prop)
 auditallow netmgrd radio_prop:property_service set;
+
+get_prop(netmgrd, default_prop);
