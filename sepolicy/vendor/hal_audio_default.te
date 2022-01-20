@@ -11,3 +11,4 @@ allow hal_audio_default qmuxd_socket:sock_file create_file_perms;
 unix_socket_connect(hal_audio_default, qmuxd, qmuxd)
 
 get_prop(hal_audio_default, default_prop);
+get_prop(hal_audio_default, audio_prop);
