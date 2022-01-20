@@ -36,7 +36,15 @@ allowxperm system_server self:udp_socket ioctl { SIOCSIFFLAGS SIOCDEVPRIVATE_D }
 allow system_server self:socket ioctl;
 allow system_server self:socket create_socket_perms;
 
+allow system_server system_file:file { ioctl };
+allow system_server app_zygote:process { getpgid };
+
+binder_call(system_server, init);
+binder_call(system_server, vendor_init);
+
+get_prop(system_server, build_bootimage_prop);
 get_prop(system_server, exported_camera_prop);
 get_prop(system_server, userspace_reboot_config_prop);
 get_prop(system_server, userspace_reboot_exported_prop);
+get_prop(system_server, vendor_default_prop);
 get_prop(system_server, vendor_security_patch_level_prop);
