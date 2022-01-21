@@ -1,0 +1,2 @@
+get_prop(updater_app, vendor_default_prop);
+set_prop(updater_app, vendor_default_prop);
