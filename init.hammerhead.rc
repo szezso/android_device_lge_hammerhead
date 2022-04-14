@@ -23,6 +23,14 @@ on early-init
     # set permissions for cmdline
     chmod 0444 /proc/cmdline
 
+    # setup permissions for fb1 related nodes
+    chown system graphics /sys/devices/virtual/graphics/fb1/hpd
+    chown system graphics /sys/devices/virtual/graphics/fb1/vendor_name
+    chown system graphics /sys/devices/virtual/graphics/fb1/product_description
+    chmod 0664 /sys/devices/virtual/graphics/fb1/hpd
+    chmod 0664 /sys/devices/virtual/graphics/fb1/vendor_name
+    chmod 0664 /sys/devices/virtual/graphics/fb1/product_description
+
 on init
     write /sys/block/zram0/comp_algorithm lz4
     write /sys/block/zram0/max_comp_streams 4
@@ -98,14 +106,6 @@ on boot
 
     # create symlink for fb1 as HDMI
     symlink /dev/graphics/fb1 /dev/graphics/hdmi
-
-    # setup permissions for fb1 related nodes
-    chown system graphics /sys/class/graphics/fb1/hpd
-    chown system graphics /sys/class/graphics/fb1/vendor_name
-    chown system graphics /sys/class/graphics/fb1/product_description
-    chmod 0664 /sys/devices/virtual/graphics/fb1/hpd
-    chmod 0664 /sys/devices/virtual/graphics/fb1/vendor_name
-    chmod 0664 /sys/devices/virtual/graphics/fb1/product_description
 
     # To allow interfaces to get v6 address when tethering is enabled
     write /proc/sys/net/ipv6/conf/rmnet0/accept_ra 2
