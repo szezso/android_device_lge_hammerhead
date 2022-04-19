@@ -195,13 +195,12 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    android.hardware.camera.provider@2.4-impl \
-    android.hardware.camera.provider@2.4-service \
+    libqomx_core \
     camera.device@3.2-impl \
-    camera.hammerhead \
     libmmcamera_interface \
     libmmjpeg_interface \
-    libqomx_core \
+    android.hardware.camera.provider@2.4-impl \
+    camera.hammerhead \
     Snap
 
 PRODUCT_PACKAGES += \

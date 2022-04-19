@@ -124,8 +124,7 @@ TARGET_HAS_HH_VSYNC_ISSUE := true
 TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
     /system/bin/cameraserver=22 \
     /system/bin/mediaserver=22 \
-    /system/vendor/bin/mm-qcamera-daemon=22 \
-    /system/vendor/bin/hw/android.hardware.camera.provider@2.4-service=22
+    /system/vendor/bin/mm-qcamera-daemon=22
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
