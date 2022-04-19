@@ -10,9 +10,7 @@ on early-boot
     chmod 0440 /sys/class/timed_output/vibrator/vtg_min
     chmod 0660 /sys/class/timed_output/vibrator/enable
 
-service vendor.vibrator-1-1 /vendor/bin/hw/android.hardware.vibrator@1.1-service.hh
-    interface android.hardware.vibrator@1.0::IVibrator default
-    interface android.hardware.vibrator@1.1::IVibrator default
+service vendor.vibrator /vendor/bin/hw/android.hardware.vibrator-service.hh
     class hal
     user system
-    group system
+    group system input
