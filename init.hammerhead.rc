@@ -214,6 +214,9 @@ on boot
     write /sys/module/cpu_boost/parameters/input_boost_freq 1497600
     write /sys/module/cpu_boost/parameters/input_boost_ms 40
 
+    # Disable console
+    stop console
+
 on post-fs-data
     # NFC: create data/nfc for nv storage
     mkdir /data/nfc 0770 nfc nfc encryption=Require
