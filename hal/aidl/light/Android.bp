@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2019-2020 The LineageOS Project
+// Copyright (C) 2020-2021 The LineageOS Project
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,17 +15,16 @@
 //
 
 cc_binary {
-    name: "android.hardware.light@2.0-service.hh",
+    name: "android.hardware.light-service.hh",
     relative_install_path: "hw",
-    init_rc: ["android.hardware.light@2.0-service.hh.rc"],
-    vintf_fragments: ["android.hardware.light@2.0-service.hh.xml"],
-    srcs: ["service.cpp", "Light.cpp"],
+    init_rc: ["android.hardware.light-service.hh.rc"],
+    vintf_fragments: ["android.hardware.light-service.hh.xml"],
+    srcs: ["main.cpp", "Lights.cpp"],
     shared_libs: [
-        "libhidlbase",
-        "liblog",
+        "libbase",
         "libutils",
-        "libhardware",
-        "android.hardware.light@2.0",
+        "libbinder_ndk",
+        "android.hardware.light-V1-ndk_platform",
     ],
-    proprietary: true,
+    vendor: true,
 }

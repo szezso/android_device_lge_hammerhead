@@ -20,8 +20,7 @@ on early-boot
     chmod 0664 /sys/class/leds/green/rgb_start
     chmod 0664 /sys/class/leds/blue/rgb_start
 
-service vendor.light-hal-2-0 /vendor/bin/hw/android.hardware.light@2.0-service.hh
-    interface android.hardware.light@2.0::ILight default
+service vendor.light /vendor/bin/hw/android.hardware.light-service.hh
     class hal
     user system
     group system

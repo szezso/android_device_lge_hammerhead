@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019-2020 The LineageOS Project
+ * Copyright (C) 2020-2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,20 +14,15 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "android.hardware.light@2.0-service.hh"
+#define LOG_TAG "android.hardware.light-service.hh"
+#include <android-base/logging.h>
 
-#include <android/hardware/light/2.0/ILight.h>
-#include <hidl/HidlSupport.h>
-#include <hidl/HidlTransportSupport.h>
-#include <utils/Errors.h>
-#include <utils/StrongPointer.h>
+#include <android/binder_manager.h>
+#include <android/binder_process.h>
 
-#include "Light.h"
+#include "Lights.h"
 
-using android::hardware::configureRpcThreadpool;
-using android::hardware::joinRpcThreadpool;
-using android::hardware::light::V2_0::ILight;
-using android::hardware::light::V2_0::implementation::Light;
+using ::aidl::android::hardware::light::Lights;
 
 const static std::string kBacklightPath = "/sys/class/leds/lcd-backlight/brightness";
 
@@ -43,78 +38,68 @@ const static std::string kRLedLockedPath = "/sys/class/leds/red/rgb_start";
 const static std::string kGLedLockedPath = "/sys/class/leds/green/rgb_start";
 const static std::string kBLedLockedPath = "/sys/class/leds/blue/rgb_start";
 
-android::status_t registerLightService() {
+std::shared_ptr<Lights> createLightsService() {
     std::ofstream backlight(kBacklightPath);
     if (!backlight) {
-        int error = errno;
-        ALOGE("Failed to open %s (%d): %s", kBacklightPath.c_str(), error, strerror(error));
-        return -error;
+        LOG(ERROR) << "Failed to open " << kBacklightPath << ". Error: " << errno << " - " << strerror(errno);
+        return NULL;
     }
 
     std::ofstream rLedBrightness(kRLedBrightnessPath);
     if (!rLedBrightness) {
-        int error = errno;
-        ALOGE("Failed to open %s (%d): %s", kRLedBrightnessPath.c_str(), error, strerror(error));
-        return -error;
+        LOG(ERROR) << "Failed to open " << kRLedBrightnessPath << ". Error: " << errno << " - " << strerror(errno);
+        return NULL;
     }
 
     std::ofstream gLedBrightness(kGLedBrightnessPath);
     if (!gLedBrightness) {
-        int error = errno;
-        ALOGE("Failed to open %s (%d): %s", kGLedBrightnessPath.c_str(), error, strerror(error));
-        return -error;
+        LOG(ERROR) << "Failed to open " << kGLedBrightnessPath << ". Error: " << errno << " - " << strerror(errno);
+        return NULL;
     }
 
     std::ofstream bLedBrightness(kBLedBrightnessPath);
     if (!bLedBrightness) {
-        int error = errno;
-        ALOGE("Failed to open %s (%d): %s", kBLedBrightnessPath.c_str(), error, strerror(error));
-        return -error;
+        LOG(ERROR) << "Failed to open " << kBLedBrightnessPath << ". Error: " << errno << " - " << strerror(errno);
+        return NULL;
     }
 
     std::ofstream rLedTimeout(kRLedTimeoutPath);
     if (!rLedTimeout) {
-        int error = errno;
-        ALOGE("Failed to open %s (%d): %s", kRLedTimeoutPath.c_str(), error, strerror(error));
-        return -error;
+        LOG(ERROR) << "Failed to open " << kRLedTimeoutPath << ". Error: " << errno << " - " << strerror(errno);
+        return NULL;
     }
 
     std::ofstream gLedTimeout(kGLedTimeoutPath);
     if (!gLedTimeout) {
-        int error = errno;
-        ALOGE("Failed to open %s (%d): %s", kGLedTimeoutPath.c_str(), error, strerror(error));
-        return -error;
+        LOG(ERROR) << "Failed to open " << kGLedTimeoutPath << ". Error: " << errno << " - " << strerror(errno);
+        return NULL;
     }
 
     std::ofstream bLedTimeout(kBLedTimeoutPath);
     if (!bLedTimeout) {
-        int error = errno;
-        ALOGE("Failed to open %s (%d): %s", kBLedTimeoutPath.c_str(), error, strerror(error));
-        return -error;
+        LOG(ERROR) << "Failed to open " << kBLedTimeoutPath << ". Error: " << errno << " - " << strerror(errno);
+        return NULL;
     }
 
     std::ofstream rLedLocked(kRLedLockedPath);
     if (!rLedLocked) {
-        int error = errno;
-        ALOGE("Failed to open %s (%d): %s", kRLedLockedPath.c_str(), error, strerror(error));
-        return -error;
+        LOG(ERROR) << "Failed to open " << kRLedLockedPath << ". Error: " << errno << " - " << strerror(errno);
+        return NULL;
     }
 
     std::ofstream gLedLocked(kGLedLockedPath);
     if (!gLedLocked) {
-        int error = errno;
-        ALOGE("Failed to open %s (%d): %s", kGLedLockedPath.c_str(), error, strerror(error));
-        return -error;
+        LOG(ERROR) << "Failed to open " << kGLedLockedPath << ". Error: " << errno << " - " << strerror(errno);
+        return NULL;
     }
 
     std::ofstream bLedLocked(kBLedLockedPath);
     if (!bLedLocked) {
-        int error = errno;
-        ALOGE("Failed to open %s (%d): %s", kBLedLockedPath.c_str(), error, strerror(error));
-        return -error;
+        LOG(ERROR) << "Failed to open " << kBLedLockedPath << ". Error: " << errno << " - " << strerror(errno);
+        return NULL;
     }
 
-    android::sp<ILight> service = new Light(std::move(backlight),
+    return ndk::SharedRefBase::make<Lights>(std::move(backlight),
                                             std::move(rLedBrightness),
                                             std::move(gLedBrightness),
                                             std::move(bLedBrightness),
@@ -124,27 +109,17 @@ android::status_t registerLightService() {
                                             std::move(rLedLocked),
                                             std::move(gLedLocked),
                                             std::move(bLedLocked));
-    if (!service) {
-        ALOGE("Cannot allocate Light HAL service");
-        return 1;
-    }
-
-    android::status_t status = service->registerAsService();
-    if (status != android::OK) {
-        ALOGE("Cannot register Light HAL service");
-        return 1;
-    }
-
-    return android::OK;
 }
 
 int main() {
-    configureRpcThreadpool(1, true);
+    ABinderProcess_setThreadPoolMaxThreadCount(0);
+    std::shared_ptr<Lights> lights = createLightsService();
+    CHECK(lights != NULL);
 
-    android::status_t status = registerLightService();
-    if (status != android::OK) {
-        return status;
-    }
+    const std::string instance = std::string() + Lights::descriptor + "/default";
+    binder_status_t status = AServiceManager_addService(lights->asBinder().get(), instance.c_str());
+    CHECK(status == STATUS_OK);
 
-    joinRpcThreadpool();
+    ABinderProcess_joinThreadPool();
+    return EXIT_FAILURE; // should not reach
 }
