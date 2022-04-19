@@ -478,6 +478,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
+    ro.qualcomm.perf.cores_online=4 \
     ro.vendor.extension_library=/vendor/lib/libqti-perfd-client.so
 
 # Subsystem ramdump
