@@ -1,4 +1,5 @@
-r_dir_file(audioserver, sysfs_socinfo)
+allow audioserver default_android_vndservice:service_manager { find add };
+allow audioserver hal_power_hwservice:hwservice_manager { find add };
 
-allow audioserver hal_power_hwservice:hwservice_manager find;
-allow audioserver hal_power_default:binder call;
+binder_call(audioserver, hal_power_default)
+r_dir_file(audioserver, sysfs_socinfo)
