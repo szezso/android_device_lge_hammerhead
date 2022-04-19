@@ -250,10 +250,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.dumpstate@1.0-service.hh
 
-# Thermal HAL
-PRODUCT_PACKAGES += \
-    android.hardware.thermal@2.0-service.mock
-
 # Vibrator HAL
 PRODUCT_PACKAGES += \
     android.hardware.vibrator-service.hh
