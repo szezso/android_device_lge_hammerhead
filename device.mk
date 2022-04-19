@@ -320,6 +320,12 @@ PRODUCT_PACKAGES += \
     mkfs.exfat \
     mount.exfat
 
+# NTFS Filesystem
+PRODUCT_PACKAGES += \
+    fsck.ntfs \
+    mkfs.ntfs \
+    mount.ntfs
+
 # Shims
 PRODUCT_PACKAGES += \
     libshim_ril
