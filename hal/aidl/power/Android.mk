@@ -11,7 +11,6 @@ LOCAL_SHARED_LIBRARIES := \
     libbase \
     libutils \
     android.hardware.power-V1-ndk_platform \
-    vendor.lineage.power-V1-ndk_platform \
     libbinder_ndk
 
 LOCAL_HEADER_LIBRARIES := \
@@ -24,7 +23,6 @@ LOCAL_SRC_FILES := \
     list.c \
     hint-data.c \
     Power.cpp \
-    LineagePower.cpp \
     main.cpp
 
 LOCAL_CFLAGS += -Wall -Wextra -Werror
