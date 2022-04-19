@@ -32,9 +32,6 @@ allow hal_drm_clearkey dumpstate:fifo_file { setattr rw_file_perms };
 allow hal_drm_default dumpstate:fd { use };
 allow hal_drm_default dumpstate:fifo_file { setattr rw_file_perms };
 
-allow hal_dumpstate_default dumpstate:fd { use };
-allow hal_dumpstate_default dumpstate:fifo_file { setattr rw_file_perms };
-
 allow hal_graphics_allocator_default dumpstate:fd { use };
 allow hal_graphics_allocator_default dumpstate:fifo_file { setattr rw_file_perms };
 
