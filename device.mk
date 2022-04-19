@@ -30,7 +30,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.recovery.hammerhead.usb.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.hammerhead.usb.rc \
     $(LOCAL_PATH)/fstab.hammerhead:$(TARGET_COPY_OUT_RAMDISK)/fstab.hammerhead \
     $(LOCAL_PATH)/fstab.hammerhead:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.hammerhead \
-    $(LOCAL_PATH)/ueventd.hammerhead.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc
+    $(LOCAL_PATH)/ueventd.hammerhead.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc
 
 # Input device files for hammerhead
 PRODUCT_COPY_FILES += \
