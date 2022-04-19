@@ -495,6 +495,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     iorapd.perfetto.enable=false \
     ro.iorapd.enable=false
 
+# Hardware
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.hardware.egl=adreno
+
 # Device was launched with K
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_k.mk)
 
