@@ -259,7 +259,7 @@ PRODUCT_PACKAGES += \
 
 # Light HAL
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.hh
+    android.hardware.light-service.hh
 
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
