@@ -4,7 +4,6 @@ allow system_app proc_pagetypeinfo:file r_file_perms;
 allow system_app shell_data_file:dir r_dir_perms;
 allow system_app system_data_file:dir create_dir_perms;
 allow system_app system_data_file:file create_file_perms;
-allow system_app system_suspend_control_service:service_manager find;
 
 binder_call(system_app, apexd)
 binder_call(system_app, installd)
@@ -12,5 +11,9 @@ binder_call(system_app, iorapd)
 binder_call(system_app, netd)
 binder_call(system_app, vold)
 binder_call(system_app, wificond)
+
+binder_call(system_app, hal_light_default)
+binder_call(system_app, hal_power_default)
+binder_call(system_app, hal_vibrator_default)
 
 r_dir_file(system_app, sysfs_zram)
