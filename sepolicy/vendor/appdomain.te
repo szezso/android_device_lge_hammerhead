@@ -1,1 +1,2 @@
+binder_call(appdomain, gpuservice);
 get_prop(appdomain, exported_camera_prop);

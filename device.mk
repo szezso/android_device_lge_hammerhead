@@ -200,8 +200,7 @@ PRODUCT_PACKAGES += \
     libmmcamera_interface \
     libmmjpeg_interface \
     android.hardware.camera.provider@2.4-impl \
-    camera.hammerhead \
-    Snap
+    camera.hammerhead
 
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.1-service
