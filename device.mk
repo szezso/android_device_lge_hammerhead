@@ -314,6 +314,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl
 
+# Exfat Filesystem
+PRODUCT_PACKAGES += \
+    fsck.exfat \
+    mkfs.exfat \
+    mount.exfat
+
 # Shims
 PRODUCT_PACKAGES += \
     libshim_ril
