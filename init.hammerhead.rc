@@ -35,7 +35,7 @@ on init
     write /proc/sys/vm/swappiness 60
 
 on fs
-    mount_all /vendor/etc/fstab.hammerhead
+    mount_all /vendor/etc/fstab.hammerhead --early
 
     # These directories have different labeling in stock rom.
     # Jumping from stock needs restorecon -F to apply our labeling.
@@ -46,9 +46,22 @@ on fs
     setprop ro.adb.nonblocking_ffs 0
     mount none /vendor/etc/gps.conf /system/etc/gps_debug.conf bind
 
+    start hwservicemanager
+
 on late-fs
     # boot time fs tune
     write /sys/block/mmcblk0/queue/iostats 0
+
+    # start services
+    start vendor.configstore-hal
+    start vendor.gralloc-2-0
+    start vendor.hwcomposer-2-1
+    start surfaceflinger
+    start bootanim
+
+    # mount late partitions
+    wait_for_prop hwservicemanager.ready true
+    mount_all /vendor/etc/fstab.hammerhead --late
 
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
