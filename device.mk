@@ -299,7 +299,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.recomputecrop=0
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.renderengine.backend=threaded
+    debug.renderengine.backend=threaded \
+    persist.log.tag.OpenGLRenderer=S
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.sf.color_saturation=1.0 \
