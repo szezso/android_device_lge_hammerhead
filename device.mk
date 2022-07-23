@@ -296,6 +296,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.hw=0 \
     debug.sf.disable_backpressure=1 \
+    debug.sf.disable_client_composition_cache=1 \
     debug.sf.latch_unsignaled=1 \
     debug.sf.recomputecrop=0
 
