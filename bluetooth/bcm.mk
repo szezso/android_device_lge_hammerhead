@@ -34,6 +34,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.service.bdroid.scms_t=0
 
 PRODUCT_PROPERTY_OVERRIDES += \
+    ro.bluetooth.a2dp_offload.supported=false
+
+PRODUCT_PROPERTY_OVERRIDES += \
     persist.bt.enableAptXHD=true \
     persist.service.btui.use_aptx=1 \
     persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac \
