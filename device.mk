@@ -269,32 +269,33 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2-service.hh
 
+# Display
 PRODUCT_PROPERTY_OVERRIDES += \
+    debug.egl.hw=0 \
     ro.opengles.version=196608
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.hwc.mdpcomp.enable=true
-
-PRODUCT_PROPERTY_OVERRIDES += \
+    debug.hwui.renderer=opengl \
     debug.hwui.use_buffer_age=false
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.sf.disable_backpressure=1
+    debug.mdpcomp.logs=0 \
+    persist.hwc.mdpcomp.enable=true
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.sf.latch_unsignaled=1
-
-PRODUCT_PROPERTY_OVERRIDES += \
+    debug.sf.hw=0 \
+    debug.sf.disable_backpressure=1 \
+    debug.sf.latch_unsignaled=1 \
     debug.sf.recomputecrop=0
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    drm.service.enabled=true
 
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
     android.hardware.drm@1.0-service \
     android.hardware.drm@1.2-service.clearkey
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    drm.service.enabled=true
 
 # FastCharge
 PRODUCT_PACKAGES += \
@@ -420,6 +421,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 
 # SurfaceFlinger
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.surface_flinger.max_frame_buffer_acquired_buffers=2 \
     ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
     ro.surface_flinger.vsync_event_phase_offset_ns=7500000 \
     ro.surface_flinger.vsync_sf_event_phase_offset_ns=5000000
