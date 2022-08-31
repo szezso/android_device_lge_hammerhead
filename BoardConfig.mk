@@ -148,6 +148,9 @@ endif
 TARGET_LD_SHIM_LIBS := \
     /vendor/lib/libril-qc-qmi-1.so|libshim_ril.so
 
+# SVELTE
+MALLOC_SVELTE := true
+
 # Power
 TARGET_USES_INTERACTION_BOOST := true
 TARGET_USES_NON_LEGACY_POWERHAL := true
