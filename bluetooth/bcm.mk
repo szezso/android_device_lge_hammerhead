@@ -34,6 +34,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.service.bdroid.scms_t=0
 
 PRODUCT_PROPERTY_OVERRIDES += \
+    persist.bluetooth.a2dp_offload.disabled=true \
+    persist.bluetooth.bluetooth_audio_hal.disabled=false \
     ro.bluetooth.a2dp_offload.supported=false
 
 PRODUCT_PROPERTY_OVERRIDES += \
