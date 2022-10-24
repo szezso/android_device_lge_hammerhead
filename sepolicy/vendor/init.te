@@ -12,4 +12,5 @@ allow init sysfs_power_management:file { setattr open write };
 allow init sysfs_ramdumps:file { open write };
 allow init sysfs_leds:lnk_file { read };
 allow init sysfs_lowmemorykiller:file { open write };
+allow init sysfs_mmc_host:file w_file_perms;
 allow init vendor_configs_file:file mounton;

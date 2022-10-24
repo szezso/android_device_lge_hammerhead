@@ -146,6 +146,10 @@
 /sys/devices/mdp(.*)/qcom,mdss_fb_primary(.*)/leds/lcd-backlight/brightness          u:object_r:sysfs_leds:s0
 /sys/devices/mdp(.*)/qcom,mdss_fb_primary(.*)/leds/lcd-backlight/max_brightness      u:object_r:sysfs_leds:s0
 
+# mmc queue
+/sys/devices/msm_sdcc\.1/mmc_host/mmc1/mmc1:0001/block/mmcblk0/queue/discard_max_bytes u:object_r:sysfs_mmc_host:s0
+/sys/devices/msm_sdcc\.1/mmc_host/mmc1/mmc1:0001/block/mmcblk0/mmcblk0rpmb/queue/discard_max_bytes u:object_r:sysfs_mmc_host:s0
+
 # TimeKeep
 /sys/devices/qpnp-rtc-[0-9]+/rtc/rtc0(/.*)?         u:object_r:sysfs_rtc:s0
 /(system/vendor|vendor)/bin/timekeep                u:object_r:timekeep_exec:s0
