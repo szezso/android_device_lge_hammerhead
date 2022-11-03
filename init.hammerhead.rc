@@ -367,11 +367,6 @@ service ssr_ramdump /vendor/bin/subsystem_ramdump -m -t emmc
     group root system
     disabled
 
-service thermal-engine /vendor/bin/thermal-engine
-   class main
-   user root
-   group radio system
-
 service vss_init /vendor/bin/vss_init
     class late_start
     user root
