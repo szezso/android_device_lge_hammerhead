@@ -113,7 +113,7 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/lge/hammerhead
 include device/qcom/sepolicy-legacy/sepolicy.mk
 
 BOARD_VENDOR_SEPOLICY_DIRS += device/lge/hammerhead/sepolicy/vendor
-PRODUCT_PRIVATE_SEPOLICY_DIRS += device/lge/hammerhead/sepolicy/private
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += device/lge/hammerhead/sepolicy/private
 
 DEVICE_MANIFEST_FILE := device/lge/hammerhead/manifest.xml
 DEVICE_MATRIX_FILE := device/lge/hammerhead/compatibility_matrix.xml
