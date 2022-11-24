@@ -157,7 +157,6 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@2.0-impl-2.1 \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
-    copybit.msm8974 \
     gralloc.msm8974 \
     hwcomposer.msm8974 \
     memtrack.msm8974 \
@@ -174,7 +173,6 @@ PRODUCT_PACKAGES += \
     libOmxCore \
     libmm-omxcore \
     libOmxVdec \
-    libOmxVdecHevc \
     libOmxVenc
 
 # Audio
@@ -316,12 +314,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl
-
-# Exfat Filesystem
-PRODUCT_PACKAGES += \
-    fsck.exfat \
-    mkfs.exfat \
-    mount.exfat
 
 # NTFS Filesystem
 PRODUCT_PACKAGES += \
