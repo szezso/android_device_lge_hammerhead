@@ -25,7 +25,7 @@ cc_binary {
         "libutils",
         "libcutils",
         "libbinder_ndk",
-        "android.hardware.vibrator-V1-ndk_platform",
+        "android.hardware.vibrator-V1-ndk",
     ],
     vendor: true,
 }
