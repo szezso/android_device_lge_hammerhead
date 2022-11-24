@@ -41,6 +41,7 @@ allow system_server app_zygote:process { getpgid };
 
 binder_call(system_server, init);
 binder_call(system_server, vendor_init);
+binder_call(system_server, zygote);
 
 get_prop(system_server, build_bootimage_prop);
 get_prop(system_server, exported_camera_prop);

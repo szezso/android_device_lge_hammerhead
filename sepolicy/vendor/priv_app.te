@@ -1,5 +1,6 @@
 allow priv_app hal_memtrack_hwservice:hwservice_manager find;
 binder_call(priv_app, hal_memtrack_default);
+binder_call(priv_app, zygote);
 
 allowxperm priv_app self:udp_socket ioctl { SIOCGIWESSID };
 

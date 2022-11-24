@@ -12,6 +12,7 @@ binder_call(system_app, iorapd)
 binder_call(system_app, netd)
 binder_call(system_app, vold)
 binder_call(system_app, wificond)
+binder_call(system_app, zygote)
 
 binder_call(system_app, hal_light_default)
 binder_call(system_app, hal_power_default)
