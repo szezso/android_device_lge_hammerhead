@@ -4,6 +4,10 @@ add_hwservice(mediaserver, fwk_camera_hwservice)
 allow mediaserver sensor_privacy_service:service_manager find;
 allow mediaserver cameraproxy_service:service_manager find;
 allow mediaserver hal_camera_hwservice:hwservice_manager find;
+allow mediaserver package_native_service:service_manager find;
+
+allow mediaserver app_data_file:dir search;
+allow mediaserver app_data_file:file open;
 
 allow mediaserver persist_drm_file:dir search;
 allow mediaserver persist_drm_file:file rw_file_perms;
@@ -19,3 +23,4 @@ allow mediaserver system_data_root_file:sock_file read;
 
 get_prop(mediaserver, audio_config_prop);
 get_prop(mediaserver, exported_camera_prop);
+get_prop(mediaserver, vendor_default_prop);
