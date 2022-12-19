@@ -16,6 +16,7 @@ binder_call(system_app, zygote)
 
 binder_call(system_app, hal_light_default)
 binder_call(system_app, hal_power_default)
+binder_call(system_app, hal_power_stats_default)
 binder_call(system_app, hal_vibrator_default)
 binder_call(system_app, hal_wifi_supplicant_default)
 
