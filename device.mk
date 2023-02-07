@@ -292,6 +292,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.disable_client_composition_cache=1 \
     debug.sf.enable_gl_backpressure=1 \
+    debug.sf.enable_transaction_tracing=false \
     debug.sf.hw=0 \
     debug.sf.latch_unsignaled=1 \
     debug.sf.predict_hwc_composition_strategy=0 \
