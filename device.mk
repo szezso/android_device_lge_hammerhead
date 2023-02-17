@@ -301,6 +301,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.recomputecrop=0
 
 PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.sf.color_saturation=1.0 \
     persist.sys.sf.disable_blurs=1 \
     ro.sf.blurs_are_expensive=1
 
