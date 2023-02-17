@@ -128,6 +128,10 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-service \
     libbt-vendor
 
+# ConfigStore
+PRODUCT_PACKAGES += \
+    disable_configstore
+
 # LiveDisplay
 PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@2.0-service-sysfs
@@ -438,10 +442,19 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 # SurfaceFlinger
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.supports_background_blur=0 \
-    ro.surface_flinger.max_frame_buffer_acquired_buffers=2 \
-    ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
     ro.surface_flinger.vsync_event_phase_offset_ns=7500000 \
-    ro.surface_flinger.vsync_sf_event_phase_offset_ns=5000000
+    ro.surface_flinger.vsync_sf_event_phase_offset_ns=5000000 \
+    ro.surface_flinger.use_context_priority=false \
+    ro.surface_flinger.max_frame_buffer_acquired_buffers=2 \
+    ro.surface_flinger.has_wide_color_display=false \
+    ro.surface_flinger.running_without_sync_framework=false \
+    ro.surface_flinger.has_HDR_display=false \
+    ro.surface_flinger.present_time_offset_from_vsync_ns=0 \
+    ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
+    ro.surface_flinger.max_virtual_display_dimension=2048 \
+    ro.surface_flinger.use_vr_flinger=false \
+    ro.surface_flinger.start_graphics_allocator_service=false \
+    ro.surface_flinger.primary_display_orientation=ORIENTATION_0
 
 # Input resampling configuration
 PRODUCT_PROPERTY_OVERRIDES += \
