@@ -4,3 +4,6 @@ allow surfaceflinger sysfs_thermal:file r_file_perms;
 allow surfaceflinger default_android_service:service_manager { find };
 
 get_prop(surfaceflinger, vendor_default_prop);
+
+binder_call(surfaceflinger, init)
+r_dir_file(surfaceflinger, bootanim)
