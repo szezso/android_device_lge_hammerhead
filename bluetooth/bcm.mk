@@ -14,11 +14,6 @@
 # limitations under the License.
 #
 
-# AptX
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/codecs/aptx/lib/libaptX_encoder.so:$(TARGET_COPY_OUT_VENDOR)/lib/libaptX_encoder.so \
-    $(LOCAL_PATH)/codecs/aptx/lib/libaptXHD_encoder.so:$(TARGET_COPY_OUT_VENDOR)/lib/libaptXHD_encoder.so
-
 # Firmware
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/firmware/BCM43xx.hcd:$(TARGET_COPY_OUT_VENDOR)/firmware/bcm4335c0.hcd
