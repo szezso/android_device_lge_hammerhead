@@ -1,3 +1,6 @@
+binder_call(init, servicemanager)
+binder_call(init, system_server)
+
 allow init debugfs:file write;
 allow init proc_bluetooth_writable:file { setattr };
 allow init proc_modules:file { r_file_perms };
