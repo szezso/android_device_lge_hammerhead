@@ -30,4 +30,7 @@ get_prop(gmscore_app, charger_prop);
 get_prop(gmscore_app, charger_config_prop);
 get_prop(gmscore_app, charger_status_prop);
 get_prop(gmscore_app, cold_boot_done_prop);
+get_prop(gmscore_app, coresight_prop);
+get_prop(gmscore_app, cpu_variant_prop);
+get_prop(gmscore_app, crash_prop);
 get_prop(gmscore_app, oem_unlock_prop);
