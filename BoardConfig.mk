@@ -39,6 +39,9 @@ BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 
 BOARD_USES_ALSA_AUDIO := true
 
+# Apex
+OVERRIDE_TARGET_FLATTEN_APEX := true
+
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_CUSTOM_BT_CONFIG := device/lge/hammerhead/bluetooth/configs/vnd_hammerhead.txt
