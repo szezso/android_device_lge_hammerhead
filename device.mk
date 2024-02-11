@@ -300,7 +300,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.recomputecrop=0
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.renderengine.backend=threaded \
+    debug.renderengine.backend=gles \
     persist.log.tag.OpenGLRenderer=S
 
 PRODUCT_PROPERTY_OVERRIDES += \
