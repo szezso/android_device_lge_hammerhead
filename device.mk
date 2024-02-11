@@ -176,6 +176,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
+    libminijail:32 \
     libstagefrighthw \
     libOmxCore \
     libmm-omxcore \
@@ -188,6 +189,7 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.service.hh \
     audio.primary.msm8974 \
     audio.usb.default \
+    libaudioroute \
     audio.r_submix.default \
     libaudio-resampler
 
